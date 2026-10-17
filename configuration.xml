@@ -181,12 +181,64 @@
       <description>RA6T2-MCK Board Support Files</description>
       <originalPack>Renesas.RA_board_ra6t2_mck.5.9.0.pack</originalPack>
     </component>
+    <component apiversion="" class="Middleware" condition="" group="all" subgroup="rm_mcuboot_port" variant="" vendor="Renesas" version="5.9.0">
+      <description>MCUboot Port for RA</description>
+      <originalPack>Renesas.RA.5.9.0.pack</originalPack>
+    </component>
+    <component apiversion="" class="boot" condition="" group="all" subgroup="MCUboot" variant="" vendor="Linaro" version="2.1.0+renesas.3.fsp.5.9.0">
+      <description>MCUboot</description>
+      <originalPack>Linaro.MCUboot.2.1.0+renesas.3.fsp.5.9.0.pack</originalPack>
+    </component>
   </raComponentSelection>
   <raElcConfiguration/>
   <raIcuConfiguration/>
   <raLinkMapConfiguration/>
   <raModuleConfiguration>
-    <context id="_hal.0"/>
+    <module id="module.middleware.mcuboot.2037890562"/>
+    <module id="module.driver.rm_mcuboot_port.1822069233"/>
+    <module id="module.middleware.mcuboot_logging.2011255503"/>
+    <context id="_hal.0">
+      <stack module="module.middleware.mcuboot.2037890562">
+        <stack module="module.driver.rm_mcuboot_port.1822069233" requires="module.middleware.mcuboot.requires.rm_mcuboot_port"/>
+        <stack module="module.middleware.mcuboot_logging.2011255503" requires="module.middleware.mcuboot.requires.mcuboot_logging"/>
+      </stack>
+    </context>
+    <config id="config.middleware.mcuboot_port"/>
+    <config id="config.middleware.mcuboot">
+      <property id="config.middleware.mcuboot.custom_mcuboot_config" value=""/>
+      <property id="config.middleware.mcuboot.signature" value="config.middleware.mcuboot.signature.ecdsap256"/>
+      <property id="config.middleware.mcuboot.upgrade_mode" value="config.middleware.mcuboot.upgrade_mode.overwrite_only"/>
+      <property id="config.middleware.mcuboot.validate_primary" value="config.middleware.mcuboot.validate_primary.enabled"/>
+      <property id="config.middleware.mcuboot.downgrade_prevention" value="config.middleware.mcuboot.downgrade_prevention.disabled"/>
+      <property id="config.middleware.mcuboot.image_number" value="config.middleware.mcuboot.image_number.1"/>
+      <property id="config.middleware.mcuboot.watchdog_feed" value=""/>
+      <property id="config.middleware.mcuboot.flash_area_bootloader_size" value="0x20000"/>
+      <property id="config.middleware.mcuboot.flash_area_bootloader_header_size" value="0x200"/>
+      <property id="config.middleware.mcuboot.flash_s_partition_size" value="0x20000"/>
+      <property id="config.middleware.mcuboot.scratch_partition_size" value="0x0"/>
+      <property id="config.middleware.mcuboot.measured_boot" value="config.middleware.mcuboot.measured_boot.disabled"/>
+      <property id="config.middleware.mcuboot.data_sharing" value="config.middleware.mcuboot.data_sharing.disabled"/>
+      <property id="config.middleware.mcuboot.flash_lp.dual_bank" value="enum.mcu.flash_lp.dual_bank.disabled"/>
+      <property id="config.middleware.mcuboot.max_measured_boot_record" value="0x64"/>
+      <property id="config.middleware.mcuboot.shared_data_size" value="0x380"/>
+      <property id="config.middleware.mcuboot.shared_data_base" value="0x20000000"/>
+      <property id="config.middleware.mcuboot.flash_nsc_partition_size" value="0x0"/>
+      <property id="config.middleware.mcuboot.flash_ns_partition_size" value="0x0"/>
+      <property id="config.middleware.mcuboot.ram_nsc_partition_size" value="0x0"/>
+      <property id="config.middleware.mcuboot.ram_ns_partition_size" value="0x0"/>
+      <property id="config.middleware.mcuboot.flash_area_bootloader_header_size_2" value="0x200"/>
+      <property id="config.middleware.mcuboot.mmf_support" value="enum.mcu.mmf.state.disabled"/>
+      <property id="config.middleware.mcuboot.boot_record" value=""/>
+      <property id="config.middleware.mcuboot.boot_record_image_2" value=""/>
+      <property id="config.middleware.mcuboot.sign_custom" value=" --confirm"/>
+      <property id="config.middleware.mcuboot.sign_custom_image_2" value=" --confirm"/>
+      <property id="config.middleware.mcuboot.python_command" value="python"/>
+      <property id="config.middleware.mcuboot.encryption_key" value="config.middleware.mcuboot.encryption_key.none"/>
+    </config>
+    <config id="config.middleware.mcuboot_logging">
+      <property id="config.middleware.mcuboot.mcuboot_logging" value="config.middleware.mcuboot.mcuboot_logging.off"/>
+    </config>
+    <config id="config.middleware.mcuboot_sysflash"/>
   </raModuleConfiguration>
   <raPinConfiguration>
     <pincfg active="true" name="RA6T2-MCK.pincfg" selected="true" symbol="g_bsp_pin_cfg">
