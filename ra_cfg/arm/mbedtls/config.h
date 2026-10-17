@@ -1465,9 +1465,9 @@ FSP_HEADER
  *
  * Uncomment this to allow your own alternate threading implementation.
  */
-#if 1
-#define MBEDTLS_THREADING_ALT
-#endif
+#if 0
+            #define MBEDTLS_THREADING_ALT
+            #endif
 
 /**
  * \def MBEDTLS_THREADING_PTHREAD
@@ -2207,9 +2207,9 @@ FSP_HEADER
  *
  * Enable this module to enable the buffer memory allocator.
  */
-#if 0
-            #define MBEDTLS_MEMORY_BUFFER_ALLOC_C
-            #endif
+#if 1
+#define MBEDTLS_MEMORY_BUFFER_ALLOC_C
+#endif
 
 /**
  * \def MBEDTLS_OID_C
@@ -2669,9 +2669,9 @@ FSP_HEADER
  *
  * Enable this layer to allow use of mutexes within Mbed TLS
  */
-#if 1
-#define MBEDTLS_THREADING_C
-#endif
+#if 0
+            #define MBEDTLS_THREADING_C
+            #endif
 
 /**
  * \def MBEDTLS_TIMING_C
