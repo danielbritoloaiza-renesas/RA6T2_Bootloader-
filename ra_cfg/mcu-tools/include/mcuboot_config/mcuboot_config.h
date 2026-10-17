@@ -32,7 +32,7 @@ extern "C" {
 #if  (1 == RA_NOT_DEFINED)
 #define RM_MCUBOOT_PORT_USE_TINYCRYPT_ACCELERATION
 #endif
-#elif (1 == RA_NOT_DEFINED)
+#elif (1 == 1)
 #define MCUBOOT_USE_MBED_TLS
 #elif (1 == RA_NOT_DEFINED)
 #define MCUBOOT_USE_OCRYPTO
