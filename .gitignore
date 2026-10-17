@@ -10,3 +10,4 @@
 
 # Local e2 studio settings
 /.settings/com.renesas.cdt.ddsc.settingseditor.prefs
+/.settings/com.renesas.cdt.ddsc.packs.componentfiles.prefs
