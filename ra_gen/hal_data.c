@@ -2,7 +2,7 @@
 #include "hal_data.h"
 flash_hp_instance_ctrl_t g_flash0_ctrl;
 const flash_cfg_t g_flash0_cfg =
-{ .data_flash_bgo = true, .p_callback = NULL, .p_context = NULL,
+{ .data_flash_bgo = false, .p_callback = NULL, .p_context = NULL,
 #if defined(VECTOR_NUMBER_FCU_FRDYI)
     .irq                 = VECTOR_NUMBER_FCU_FRDYI,
 #else
