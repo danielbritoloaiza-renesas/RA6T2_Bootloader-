@@ -11,7 +11,6 @@ extern "C" {
 #define MCUBOOT_SIGN_RSA
 #endif
 
-#define MCUBOOT_OVERWRITE_ONLY
 #ifdef MCUBOOT_OVERWRITE_ONLY_FAST
 #define MCUBOOT_OVERWRITE_ONLY
 #endif
