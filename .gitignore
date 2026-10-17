@@ -1,0 +1,15 @@
+# e2 studio build output
+/Debug/*
+!/Debug/memory_regions.ld
+!/Debug/*.elf
+/Release/*
+!/Release/*.elf
+
+# Generated FSP configuration summary
+/ra_cfg.txt
+
+# Local e2 studio settings
+/.settings/com.renesas.cdt.ddsc.settingseditor.prefs
+/.settings/com.renesas.cdt.ddsc.packs.componentfiles.prefs
+/.settings/org.eclipse.cdt.managedbuilder.core.prefs
+/.settings/com.renesas.cdt.ddsc.threads.configurator.prefs
