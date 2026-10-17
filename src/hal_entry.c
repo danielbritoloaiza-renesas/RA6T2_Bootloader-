@@ -43,7 +43,6 @@ void R_BSP_WarmStart(bsp_warm_start_event_t event)
         /* C runtime environment and system clocks are setup. */
 
         /* Configure pins. */
-        R_IOPORT_Open (&IOPORT_CFG_CTRL, &IOPORT_CFG_NAME);
 
 #if BSP_CFG_SDRAM_ENABLED
 
